@@ -77,3 +77,15 @@ p {
 p + p{
   margin-top: 1rem;
 }
+
+@media (min-width: 600px) {
+  body {
+    width: 60rem;
+  }
+}
+
+@media (min-width: 900px) {
+  body {
+    width: 90rem;
+  }
+}

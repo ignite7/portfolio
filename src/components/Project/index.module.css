@@ -10,6 +10,18 @@
     gap: 2rem;
 }
 
-.project p {
+.project p, .project button {
     margin-top: 0;
+}
+
+.name:first-letter {
+    text-transform: capitalize;
+}
+
+.description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    white-space: pre-wrap;
 }
