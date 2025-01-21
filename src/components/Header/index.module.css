@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    align-items: center;
+    margin: 5rem 0 8rem 0;
+    gap: 2rem;
+}
+
+.links {
+    font-size: var(--font-size-h5);
+}
+
+.links:last-child {
+    margin-left: auto;
+}
