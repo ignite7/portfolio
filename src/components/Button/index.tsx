@@ -1,17 +1,22 @@
+import { ReactNode } from 'react';
 import styles from './index.module.css';
-import {ReactNode} from "react";
 
 interface IProps {
-    title?: string;
-    onClick?: () => void;
-    type?: 'button' | 'submit' | 'reset';
-    children?: ReactNode;
+  title?: string;
+  onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
+  children?: ReactNode;
 }
 
-export default function Button({type = 'button',title, onClick, children}: IProps) {
-    return (
-        <button type={type} className={styles.button} onClick={onClick}>
-            {children || title}
-        </button>
-    );
+export default function Button({
+  type = 'button',
+  title,
+  onClick,
+  children,
+}: IProps) {
+  return (
+    <button type={type} className={styles.button} onClick={onClick}>
+      {children || title}
+    </button>
+  );
 }

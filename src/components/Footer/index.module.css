@@ -1,15 +1,16 @@
 .footer {
-    display: flex;
-    align-items: center;
-    margin: 8rem 0 5rem 0;
-    border-top: solid 0.1rem var(--white);
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  margin: 8rem 0 5rem 0;
+  border-top: solid 0.1rem var(--white);
+  gap: 2rem;
 }
 
 .author {
-    margin-right: auto;
+  margin-right: auto;
 }
 
-.author, .links {
-    margin-top: 2rem;
+.author,
+.links {
+  margin-top: 2rem;
 }

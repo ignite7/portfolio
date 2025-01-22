@@ -1,11 +1,11 @@
-import Title from "app/components/Title";
-import CreateForm from "app/components/CreateForm";
+import CreateForm from 'app/components/CreateForm';
+import Title from 'app/components/Title';
 
 export default function Create() {
-    return (
-        <>
-            <Title title={'Create Project'} />
-            <CreateForm />
-        </>
-    );
+  return (
+    <>
+      <Title title={'Create Project'} />
+      <CreateForm />
+    </>
+  );
 }

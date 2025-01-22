@@ -1,30 +1,35 @@
 'use client';
 
-import Form from "app/components/Form";
-import {FormEvent, useState} from "react";
-import IProject from "app/interfaces/IProject";
-import RequestHelper from "app/helpers/RequestHelper";
-import {useRouter} from "next/navigation";
-import FormType from "app/types/FormType";
+import Form from 'app/components/Form';
+import RequestHelper from 'app/helpers/RequestHelper';
+import IProject from 'app/interfaces/IProject';
+import FormType from 'app/types/FormType';
+import { useRouter } from 'next/navigation';
+import { FormEvent, useState } from 'react';
 
 interface IProps {
-    project: IProject;
+  project: IProject;
 }
 
-export default function EditForm({project}: IProps) {
-    const router = useRouter();
-    const [values, setValues] = useState<FormType>(project);
+export default function EditForm({ project }: IProps) {
+  const router = useRouter();
+  const [values, setValues] = useState<FormType>(project);
 
-    const handleSubmit = async (e: FormEvent): Promise<void> => {
-        e.preventDefault();
-        const updatedProject: IProject | null = await RequestHelper.put(`projects/${project.id}`, values);
+  const handleSubmit = async (e: FormEvent): Promise<void> => {
+    e.preventDefault();
+    const updatedProject: IProject | null = await RequestHelper.put(
+      `projects/${project.id}`,
+      values
+    );
 
-        if (updatedProject) {
-            router.push(`/projects/${project.id}`);
-        } else {
-            console.error('Project creation failed');
-        }
+    if (updatedProject) {
+      router.push(`/projects/${project.id}`);
+    } else {
+      console.error('Project creation failed');
     }
+  };
 
-    return <Form values={values} setValues={setValues} handleSubmit={handleSubmit} />;
+  return (
+    <Form values={values} setValues={setValues} handleSubmit={handleSubmit} />
+  );
 }

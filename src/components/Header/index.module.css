@@ -1,23 +1,23 @@
 .header {
-    display: flex;
-    align-items: center;
-    margin: 5rem 0 8rem 0;
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  margin: 5rem 0 8rem 0;
+  gap: 2rem;
 }
 
 .links {
-    font-size: var(--font-size-h5);
+  font-size: var(--font-size-h5);
 }
 
 .links:last-child {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .links.logout {
-    user-select: none;
+  user-select: none;
 }
 
 .links.logout:hover {
-    cursor: pointer;
-    opacity: 0.75;
+  cursor: pointer;
+  opacity: 0.75;
 }

@@ -1,4 +1,4 @@
-import IProject from "app/interfaces/IProject";
+import IProject from 'app/interfaces/IProject';
 
 type FormType = Omit<IProject, 'id'>;
 

@@ -34,7 +34,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
@@ -74,7 +76,7 @@ p {
   font-size: var(--font-size-p);
 }
 
-p + p{
+p + p {
   margin-top: 1rem;
 }
 
