@@ -29,3 +29,9 @@ You can run the tests by running `npm run test` or `yarn test`
 - I used dynamic routing to create dynamic pages for the projects
 - I used build-in CSS modules support, this allows me to write modular and scalable CSS code
 - I used middleware to protect the admin routes
+
+## Summary
+
+I had a lot of fun building this project. Please keep in mind because of the short time frame, I didn't have the chance to implement all the features more in detail. I hope you like it!
+
+You can also check my personal website at [sergiovanberkel.com](https://sergiovanberkel.com/). It is also my personal portfolio where I have more information about me and my projects using the GitHub API.
