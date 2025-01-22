@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import Form from 'app/components/Form';
-import DateFormat from 'app/enums/DateFormat';
+import DateFormatEnum from 'app/enums/DateFormatEnum';
 import dayjs from 'dayjs';
 
 describe('Form', () => {
@@ -37,7 +37,7 @@ describe('Form', () => {
     expect(descriptionInput).toHaveValue(mockValues.description);
     expect(createdAtInput).toBeInTheDocument();
     expect(createdAtInput).toHaveValue(
-      dayjs(mockValues.createdAt).format(DateFormat.DATE)
+      dayjs(mockValues.createdAt).format(DateFormatEnum.DATE)
     );
 
     const submitButton = screen.getByRole('button', { name: /submit/i });

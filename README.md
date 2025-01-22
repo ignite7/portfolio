@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Demo
 
-## Getting Started
+This is a demo of a portfolio website that I created using Next.js and TypeScript. The website is fully responsive.
 
-First, run the development server:
+## Setup
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository
+2. Install the dependencies by running `npm install` or `yarn install`
+3. Run the development server by running `npm run dev` or `yarn dev`
+4. Copy the `.env.example` file to `.env` and fill in the required environment variables
+5. Head over to `http://localhost:3000` to see the website
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Login
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can login to the website using the following credentials:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Username:** admin
+- **Password:** password
 
-## Learn More
+## Testing
 
-To learn more about Next.js, take a look at the following resources:
+You can run the tests by running `npm run test` or `yarn test`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Next.js Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- I used SSR (Server Side Rendering) to improve the performance of the website
+- I used SSG (Static Site Generation) to generate static pages for the website
+- I opt to use a hybrid approach where I can use both SSR and SSG. It allows me to deliver the not interactable parts of the page as static.
+- I used dynamic routing to create dynamic pages for the projects
+- I used build-in CSS modules support, this allows me to write modular and scalable CSS code
+- I used middleware to protect the admin routes

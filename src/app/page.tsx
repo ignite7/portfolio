@@ -1,13 +1,22 @@
 import Portfolio from 'app/components/Portfolio';
 import Title from 'app/components/Title';
 import RequestHelper from 'app/helpers/RequestHelper';
-import IProject from 'app/Interfaces/IProject';
+import IProject from 'app/interfaces/IProject';
+import Head from 'next/head';
 
 export default async function Home() {
   const projects: IProject[] = (await RequestHelper.get('projects')) ?? [];
 
   return (
     <>
+      <Head>
+        <title>Welcome to my portfolio!</title>
+        <meta
+          property="og:title"
+          content="Welcome to my portfolio!"
+          key="title"
+        />
+      </Head>
       <Title title={'Welcome to my portfolio!'} />
       <p>
         This portfolio demonstrates the capabilities of a modern, full-stack

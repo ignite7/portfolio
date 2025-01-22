@@ -1,8 +1,6 @@
-interface IProject {
+export default interface IProject {
   id: number;
   name: string;
   description: string;
   createdAt: string;
 }
-
-export default IProject;

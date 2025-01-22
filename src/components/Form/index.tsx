@@ -1,6 +1,6 @@
 import Button from 'app/components/Button';
 import Input from 'app/components/Input';
-import DateFormat from 'app/enums/DateFormat';
+import DateFormatEnum from 'app/enums/DateFormatEnum';
 import FormType from 'app/types/FormType';
 import dayjs from 'dayjs';
 import { Dispatch, FormEvent, SetStateAction } from 'react';
@@ -36,7 +36,7 @@ export default function Form({ values, setValues, handleSubmit }: IProps) {
       <Input
         placeholder={'Created At'}
         type={'date'}
-        value={dayjs(createdAt).format(DateFormat.DATE)}
+        value={dayjs(createdAt).format(DateFormatEnum.DATE)}
         onChange={(e) => setValues({ ...values, createdAt: e.target.value })}
       />
       <Button type={'submit'} title={'Submit'} />

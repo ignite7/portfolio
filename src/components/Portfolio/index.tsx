@@ -1,9 +1,9 @@
 'use client';
 
-import IProject from 'app/Interfaces/IProject';
 import Button from 'app/components/Button';
 import Project from 'app/components/Project';
 import { useAuth } from 'app/context/AuthContext';
+import IProject from 'app/interfaces/IProject';
 import dayjs from 'dayjs';
 import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';

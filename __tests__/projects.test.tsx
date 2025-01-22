@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import Project from 'app/components/Project';
 import { AuthProvider } from 'app/context/AuthContext';
-import DateFormat from 'app/enums/DateFormat';
+import DateFormatEnum from 'app/enums/DateFormatEnum';
 import IProject from 'app/interfaces/IProject';
 import dayjs from 'dayjs';
 
@@ -31,7 +31,7 @@ describe('Project', () => {
     const nameElement = screen.getByText(mockProject.name);
     const descriptionElement = screen.getByText(mockProject.description);
     const dateElement = screen.getByText(
-      dayjs(mockProject.createdAt).format(DateFormat.READABLE_DATE)
+      dayjs(mockProject.createdAt).format(DateFormatEnum.READABLE_DATE)
     );
 
     expect(nameElement).toBeInTheDocument();

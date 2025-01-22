@@ -1,9 +1,9 @@
-import DateFormat from 'app/Enums/DateFormat';
-import IProject from 'app/Interfaces/IProject';
 import EditOrDeleteActions from 'app/components/EditOrDeleteActions';
 import Title from 'app/components/Title';
+import DateFormatEnum from 'app/enums/DateFormatEnum';
 import RequestHelper from 'app/helpers/RequestHelper';
 import IParams from 'app/interfaces/IParams';
+import IProject from 'app/interfaces/IProject';
 import dayjs from 'dayjs';
 
 export default async function ViewProject({ params }: IParams) {
@@ -20,7 +20,7 @@ export default async function ViewProject({ params }: IParams) {
     <>
       <Title title={name} />
       <p>{description}</p>
-      <p>{dayjs(createdAt).format(DateFormat.READABLE_DATE)}</p>
+      <p>{dayjs(createdAt).format(DateFormatEnum.READABLE_DATE)}</p>
       <EditOrDeleteActions project={project} />
     </>
   );
