@@ -1,20 +1,12 @@
 import Title from "app/components/Title";
 import IProject from "app/Interfaces/IProject";
-import axios from "axios";
 import Portfolio from "app/components/Portfolio";
+import RequestHelper from "app/helpers/RequestHelper";
+import Link from "next/link";
+import Button from "app/components/Button";
 
 export default async function Home() {
-    const secret: string = process.env.NEXT_PUBLIC_MOCKAPI_SECRET || '';
-    let projects: IProject[] = [];
-
-    try {
-        const {data, statusText} = await axios.get<IProject[]>(`https://${secret}.mockapi.io/projects`);
-        if (statusText === 'OK') {
-            projects = data;
-        }
-    } catch (error) {
-        console.error(error);
-    }
+    const projects: IProject[] = await RequestHelper.get('projects') ?? [];
 
     return (
         <>

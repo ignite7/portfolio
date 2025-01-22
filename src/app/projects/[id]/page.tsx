@@ -1,26 +1,14 @@
 import IProject from "app/Interfaces/IProject";
-import axios from "axios";
 import Title from "app/components/Title";
 import dayjs from "dayjs";
 import DateFormat from "app/Enums/DateFormat";
+import EditOrDeleteActions from "app/components/EditOrDeleteActions";
+import RequestHelper from "app/helpers/RequestHelper";
+import IParams from "app/interfaces/IParams";
 
-interface IProps {
-    params: Promise<{id: IProject['id']}>
-}
-
-export default async function ViewProject({params}: IProps) {
+export default async function ViewProject({params}: IParams) {
     const id: IProject['id'] = (await params).id;
-    const secret: string = process.env.NEXT_PUBLIC_MOCKAPI_SECRET || '';
-    let project: IProject | null = null;
-
-    try {
-        const {data, statusText} = await axios.get<IProject>(`https://${secret}.mockapi.io/projects/${id}`);
-        if (statusText === 'OK') {
-            project = data;
-        }
-    } catch (error) {
-        console.error(error);
-    }
+    const project: IProject | null = await RequestHelper.get(`projects/${id}`);
 
     if (!project) {
         return <Title title={'Project not found'} />
@@ -33,6 +21,7 @@ export default async function ViewProject({params}: IProps) {
             <Title title={name}/>
             <p>{description}</p>
             <p>{dayjs(createdAt).format(DateFormat.READABLE_DATE)}</p>
+            <EditOrDeleteActions project={project}/>
         </>
     );
 }

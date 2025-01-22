@@ -5,6 +5,8 @@ import Project from "app/components/Project";
 import {useMemo, useState} from "react";
 import Button from "app/components/Button";
 import dayjs from "dayjs";
+import {useRouter} from "next/navigation";
+import {useAuth} from "app/context/AuthContext";
 
 const LOADING_SIZE = 5;
 
@@ -13,6 +15,8 @@ interface IProps {
 }
 
 export default function Portfolio({projects}: IProps) {
+    const router = useRouter();
+    const { user } = useAuth();
     const [end, setEnd] = useState<number>(LOADING_SIZE);
 
     const sortedProjects: IProject[] = useMemo((): IProject[] => {
@@ -23,6 +27,9 @@ export default function Portfolio({projects}: IProps) {
 
     return (
         <>
+            {user ? (
+                <Button title={'Create Project'} onClick={() => router.push('/projects/create')}/>
+            ) : null}
             {sortedProjects.slice(0, end).map((project: IProject) => (
                 <Project key={project.id} {...project} />
             ))}

@@ -12,3 +12,12 @@
 .links:last-child {
     margin-left: auto;
 }
+
+.links.logout {
+    user-select: none;
+}
+
+.links.logout:hover {
+    cursor: pointer;
+    opacity: 0.75;
+}
