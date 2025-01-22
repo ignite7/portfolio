@@ -16,7 +16,11 @@ export default function Form({ values, setValues, handleSubmit }: IProps) {
   const { name, description, createdAt } = values;
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form
+      className={styles.form}
+      onSubmit={handleSubmit}
+      data-testid={'form-element'}
+    >
       <Input
         placeholder={'Project Name'}
         type={'text'}
