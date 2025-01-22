@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const login = (username: string, password: string): boolean => {
-    const result: boolean = username === 'demo' && password === 'password';
+    const result: boolean = username === 'admin' && password === 'password';
 
     if (result) {
       document.cookie = 'user=true; path=/';

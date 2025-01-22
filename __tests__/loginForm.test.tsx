@@ -66,7 +66,7 @@ describe('LoginForm', () => {
     const passwordInput = screen.getByPlaceholderText(/password/i);
     const loginButton = screen.getByRole('button', { name: /login/i });
 
-    fireEvent.change(usernameInput, { target: { value: 'demo' } });
+    fireEvent.change(usernameInput, { target: { value: 'admin' } });
     fireEvent.change(passwordInput, { target: { value: 'password' } });
     fireEvent.click(loginButton);
 
@@ -86,7 +86,7 @@ describe('LoginForm', () => {
     const passwordInput = screen.getByPlaceholderText(/password/i);
     const loginButton = screen.getByRole('button', { name: /login/i });
 
-    fireEvent.change(usernameInput, { target: { value: 'demo' } });
+    fireEvent.change(usernameInput, { target: { value: 'admin' } });
     fireEvent.change(passwordInput, { target: { value: 'password' } });
     fireEvent.click(loginButton);
 

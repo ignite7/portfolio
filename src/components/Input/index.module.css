@@ -9,3 +9,8 @@
   outline: none;
   box-shadow: 0 0 0.5rem var(--white);
 }
+
+.input[type='date']::-webkit-calendar-picker-indicator {
+  background-color: var(--white);
+  border-radius: 50%;
+}
